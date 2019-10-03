@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  jupyterlab:
+    image: jupyterlab:1.1.4
+    build:
+      context: .
+    container_name: jupyterlab_python3
+    ports:
+      - "8888:8888"
+    volumes:
+      - "$PWD/notebooks:/jupyter/notebooks"
+    stdin_open: true
+    tty: true
+    security_opt:
+      - no-new-privileges

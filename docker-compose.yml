@@ -9,8 +9,13 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - "$PWD/notebooks:/jupyter/notebooks"
+      - "$PWD/notebooks:/jupyter/notebooks:Z"
     stdin_open: true
     tty: true
+    networks:
+      - overlay
     security_opt:
       - no-new-privileges
+
+networks:
+  overlay:

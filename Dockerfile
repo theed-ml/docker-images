@@ -35,16 +35,19 @@ RUN apk add linux-headers \
 			shadow \
 			git \
 			npm \
+ 			texlive-xetex \
+			graphviz \
  && pip3 install --upgrade pip \
  && pip3 install msgpack \
- 				 jupyterlab \
- 				 jupyterlab-git \
- 				 nbdime \
- 				 setuptools_scm \
- 				 pytest \
- 				 pylint \
- 				 flake8 \
- 				 black \
+ 		 jupyterlab \
+ 		 jupyterlab-git \
+ 		 nbdime \
+ 		 setuptools_scm \
+ 		 pytest \
+ 		 pylint \
+ 		 flake8 \
+ 		 black \
+		 graphviz \
  && nbdime extensions --enable \
  && jupyter serverextension enable --py jupyterlab_git \
  && jupyter labextension install @jupyterlab/git \
